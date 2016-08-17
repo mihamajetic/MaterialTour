@@ -1,2 +1,2 @@
 # MaterialTour
-Simple Material Web Tour
+Simple jQuery Web Tour Plugin

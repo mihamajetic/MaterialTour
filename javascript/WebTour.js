@@ -6,6 +6,7 @@ jQuery.fn.extend({
     var text = text;
     var topPosition;
     var leftPosition;
+    var id = $.now();
     switch (vertical) {
       case "top":
         topPosition = $(this).offset().top - 15;
@@ -24,14 +25,16 @@ jQuery.fn.extend({
         break;
     }
 
-    $("body").append('<div class="webtour-btn" style="top: ' + (topPosition) + 'px; left: ' + (leftPosition) + 'px;"><a class="pulse-button"><i class="fa fa-info" aria-hidden="true"></i></a><div class="pulse-content" style="display: none;"> ' + text + ' </div></div>');
-
+    $("body").append('<div class="pulse" id="' + id + '"></div>')
+    $("#" + id).append('<div class="webtour-btn" style="top: ' + (topPosition) + 'px; left: ' + (leftPosition) + 'px;"><a class="pulse-button"><i class="fa fa-info" aria-hidden="true"></i></a></div>');
+    $("#" + id).append('<div class="arrow_box" style="display: none;top: ' + (topPosition + 28 + 10) + 'px; left: ' + (leftPosition - 140 + 14) + 'px;">' + text + '</div>');
   }
 });
 
 $(document).ready(function() {
   $(".pulse-button").click(function () {
-    $(this).parent().children(".pulse-content").fadeIn(1000);
+    var id = $(this).parent().parent().attr("id");
+    $("#" + id).children(".arrow_box").fadeIn(1000);
     $(this).css("visibility", "hidden");
   });
 

@@ -31,7 +31,8 @@ jQuery.fn.extend({
 
 $(document).ready(function() {
   $(".pulse-button").click(function () {
-    $(this).parent().children(".pulse-content").fadeIn();
+    $(this).parent().children(".pulse-content").fadeIn(1000);
+    $(this).css("visibility", "hidden");
   });
 
 });

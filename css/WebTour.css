@@ -2,7 +2,6 @@
   position: fixed;
 }
 
-
 .pulse-button {
   display: inline-block;
   border-radius: 50%;
@@ -31,3 +30,11 @@
 @-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
 @-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
 @keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+
+
+.pulse-content {
+  padding: 10px;
+  border: 5px solid #ffa000;
+  border-radius: 10px;
+  margin: 5px
+}
